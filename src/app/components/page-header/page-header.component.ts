@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHeaderComponent implements OnInit {
 
+  nav_item: Array<{name:string, path:string}> =
+  [
+    {name:'Home', path: 'home'},
+    {name:'About',path:'about'},
+    {name:'Contact', path:'contact'},
+    {name:'FAQ', path: 'faq'},
+    {name:'Help',path:'help'}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
