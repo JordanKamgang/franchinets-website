@@ -1,0 +1,65 @@
+footer {
+  background-color: gold;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 33.33% 33.33%  33.33%;
+
+  .footer-left {
+    display: grid;
+    grid-auto-flow: row;
+    height: auto;
+    text-align: left;
+    font-weight: 800;
+    font-size: 0.8rem;
+
+    .footer-left-item1 {
+      display: grid !important;
+      align-items: center;
+      align-content: center;
+      font-size: 1.5rem;
+    }
+
+    .footer-left-item2 {
+      display: grid;
+      align-content: flex-end;
+      align-items: flex-end;
+    }
+
+  }
+
+  .footer-center {
+    text-align: center;
+
+    .footer-center-item {
+      display: grid;
+      grid-auto-flow: column;
+      width: fit-content;
+
+      .icon {
+        padding-right: 1rem;
+      }
+
+      // .item {
+      //   font-size: 1.2rem;
+      //   font-weight: 800;
+      // }
+
+    }
+  }
+
+  .footer-right {
+
+    .icon {
+      text-align: right;
+    }
+
+    .item {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+  }
+
+
+}
+
+

@@ -7,6 +7,8 @@ import { FooPageComponent } from './components/foo-page/foo-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule} from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { PageHeaderComponent } from './components/page-header/page-header.compon
     FooPageComponent,
     HomePageComponent,
     MenuBarComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
