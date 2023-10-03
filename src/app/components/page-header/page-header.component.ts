@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as translations from '../../../assets/translationsfile.json';
+import * as translations from 'src/assets/translationsfile.json';
 import { HttpClient } from '@angular/common/http';
 import { FranchinettranslationService } from 'src/app/services/franchinettranslations/franchinettranslation.service';
 import { Language } from 'src/app/interfaces/language';
@@ -28,7 +28,7 @@ export class PageHeaderComponent implements OnInit {
   selectedLanguage: Language = {name:'', code:''};
   lang: string = '';
   data: any = translations;
-  url: string = '../../../assets/translationsfile.json';
+  url: string = 'src/assets/translationsfile.json';
   schoolName = 'franchinet_txt_header_schoolName';
 
 

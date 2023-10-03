@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as translations from '../../assets/translationsfile.json';
+import * as translations from 'src/assets/translationsfile.json';
 import { FranchinettranslationService } from '../services/franchinettranslations/franchinettranslation.service';
 import { TranslationTags } from '../interfaces/tanslationtags';
 

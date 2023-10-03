@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as translations from '../../../assets/translationsfile.json';
+import * as translations from 'src/assets/translationsfile.json';
 import { HttpClient } from '@angular/common/http';
 import { map} from 'rxjs/operators'
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class FranchinettranslationService {
 
   _language = 'EN';
-  url = '../../../assets/translationsfile.json';
+  url = 'src/assets/translationsfile.json';
   data: any = translations;
   translatObjecte: Array<translationTags> = new Array<translationTags>();
   constructor(private http: HttpClient) {
