@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooPageComponent implements OnInit {
 
+  schoolName = 'franchinet_txt_header_schoolName';
   constructor() { }
 
   ngOnInit(): void {

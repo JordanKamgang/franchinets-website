@@ -2,7 +2,7 @@ footer {
   background-color: gold;
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 33.33% 33.33%  33.33%;
+  grid-template-columns: 43% 19%  38%;
 
   .footer-left {
     display: grid;
@@ -16,6 +16,7 @@ footer {
       display: grid !important;
       align-items: center;
       align-content: center;
+      text-align: center;
       font-size: 1.5rem;
     }
 
