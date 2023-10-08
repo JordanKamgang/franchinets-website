@@ -17,13 +17,9 @@ export class TranslationPipe implements PipeTransform {
     }
   }
   transform(value: any) {
-    console.log(this.translationService.language);
     let dataConvert: Array<any> = JSON.parse(JSON.stringify(this.data));
-    console.log(this.languagesBuffer);
     let translation = this.languagesBuffer.find((element:TranslationTags) => element.Name === value);
     this.language = this.translationService.language;
-    console.log(translation);
-
 
     if(translation!== undefined && this.language === 'EN') {
       return translation.English;

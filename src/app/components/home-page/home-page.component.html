@@ -1,1 +1,19 @@
 <p>home-page works!</p>
+<div class="slideshow-container">
+  <div class="mySlides fade" *ngFor="let item of slideshowItem">
+    <div *ngIf="item.show===true">
+      <div class="numbertext">
+        {{ item.index }} / {{ slideshowItem.length }}
+      </div>
+      <img [src]="item.src" style="width: 100%" [alt]="item.name" />
+      <div class="text">{{ item.name }}</div>
+    </div>
+  </div>
+  <br />
+  <div style="text-align: center">
+    <span class="dot1" *ngFor="let item2 of slideshowItem"></span>
+  </div>
+  <!-- <div class="test">
+    <img [src]="slideshowItem[0].src" [alt]="slideshowItem[0].name">
+  </div> -->
+</div>

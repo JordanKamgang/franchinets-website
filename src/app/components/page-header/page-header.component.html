@@ -18,23 +18,72 @@
 
 <header class="franchinets-header">
   <div class="franchinets-grid">
-    <div class="logo"><a routerLink="home"><img src="../../../assets/favicon.png" alt="Groupe Scolaire Bilingue Les Franchinets" /></a></div>
-    <div class="name"><h1>{{schoolName | translate}}</h1></div>
-    <div class="top-nav">
-      <div class="nav-item" *ngFor="let item of nav_item">
-        <div *ngIf="item.name!==null && item.path !== 'language'"><a [routerLink]="item.path" >{{item.name | translate}}</a></div>
-        <div *ngIf="item.name!==null && item.path === 'language'">
-          <label for="language">{{item.name | translate}}: </label>
-          <select name="language" id="language" [(ngModel)]="selectedLanguage" (ngModelChange)="onSelectionChange($event)" >
-            <option *ngFor="let language of languages" [ngValue]="language">{{language.code}}</option>
-          </select>
-        </div>
-      </div>
+    <div class="logo">
+      <a routerLink="home"
+        ><img
+          src="assets/favicon.png"
+          alt="Groupe Scolaire Bilingue Les Franchinets"
+      /></a>
+    </div>
+    <div class="name">
+      <h1>{{ schoolName | translate }}</h1>
     </div>
   </div>
-
+  <div class="slideshow-container" *ngIf="currentPath === 'home'">
+    <div class="mySlides fade" *ngFor="let item of slideshowItem">
+      <div *ngIf="item.show">
+        <div class="numbertext">
+          {{ item.index }} / {{ slideshowItem.length }}
+        </div>
+        <img [src]="item.src" style="width: 100%" [alt]="item.name" />
+      </div>
+    </div>
+    <br />
+    <div style="text-align: center">
+      <span class="dot" *ngFor="let item2 of slideshowItem"></span>
+    </div>
+  </div>
+  <div class="top-nav">
+    <div class="navbar" *ngFor="let item of nav_item">
+      <div
+        *ngIf="
+          item.name !== null && item.item !== undefined && item.item.length > 0;
+          else doThis
+        "
+      >
+        <div class="dropdown">
+          <button class="dropbtn">
+            {{ item.name | translate }}
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" *ngIf="item.path !== 'language'">
+            <a
+              *ngFor="let dropItem of item.item"
+              [routerLink]="dropItem.path"
+              >{{ dropItem.name | translate }}</a
+            >
+          </div>
+          <div class="dropdown-content" *ngIf="item.path === 'language'">
+            <label for="language">{{ item.name | translate }}: </label>
+            <select
+              name="language"
+              id="language"
+              [(ngModel)]="selectedLanguage"
+              (ngModelChange)="onSelectionChange($event)"
+            >
+              <option *ngFor="let language of languages" [ngValue]="language">
+                {{ language.code }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <ng-template #doThis>
+        <a [routerLink]="item.path">{{ item.name | translate }}</a>
+      </ng-template>
+    </div>
+  </div>
 </header>
-
 
 <!-- <div *ngIf="item.name!==null && item.name == 'Language'" class="nav-item-item">
   <mat-form-field style="width: 4rem; align-items: flex-end; ">
